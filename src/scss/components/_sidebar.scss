@@ -1,0 +1,23 @@
+#sidebar {
+  .song-item {
+    background-color: $purple;
+    padding: 5px 10px;
+    border-bottom: 1px solid gray;
+
+    &:first-child {
+      padding-top: 10px;
+    }
+
+    &:hover {
+      background-color: $darkpurple;
+    }
+  }
+
+  .song-item > * {
+    pointer-events: none;
+  }
+
+  .song-artist {
+    font-size: 12px;
+  }
+}

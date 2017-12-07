@@ -1,0 +1,25 @@
+#waveform {
+  .waveform-btn {
+    display: none;
+
+    &.active {
+      display: inline-block;
+    }
+  }
+
+  .paused {
+    display: none;
+
+    &.active {
+      display: inline;
+    }
+  }
+
+  .playing {
+    display: none;
+
+    &.active {
+      display: inline;
+    }
+  }
+}

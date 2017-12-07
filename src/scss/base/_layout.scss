@@ -1,0 +1,65 @@
+html,
+body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  left: 0;
+  top: 0;
+  font-size: 100%;
+}
+
+body {
+  font-family: sans-serif;
+  background-color: $lightpurple;
+}
+
+h1, h2, h3 {
+  font-weight: 700;
+}
+
+h1 {
+  font-size: 36px;
+}
+
+h2 {
+  font-size: 24px;
+}
+
+h3 {
+  font-size: 16px;
+}
+
+button {
+  border-radius: 0;
+}
+
+label {
+  display: block;
+}
+
+input[type="text"], input[type="password"], input[type="date"], textarea, select {
+  padding: .5em .6em;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-shadow: inset 0 1px 3px #ddd;
+  border-radius: 4px;
+  vertical-align: middle;
+  box-sizing: border-box;
+  font-size: 14px;
+}
+
+button {
+  height: 41px;
+  box-sizing: border-box;
+  padding: 10px;
+  color: white;
+  background-color: blue;
+  cursor: pointer;
+  outline: none;
+  font-weight: 700;
+
+  &:hover {
+    background-color: darkblue;
+  }
+}

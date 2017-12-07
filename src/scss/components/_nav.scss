@@ -1,0 +1,18 @@
+.site-nav {
+  position: relative;
+  top: 0;
+  background-color: $aqua;
+  height: 41px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+
+  .title {
+    color: $gray;
+    text-shadow: -2px 3px black;
+    letter-spacing: 6px;
+    font-weight: 700;
+    font-size: 24px;
+  }
+}
