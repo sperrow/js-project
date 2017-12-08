@@ -14,7 +14,7 @@ const waveformDisplay = url => {
 
   const wavesurfer = WaveSurfer.create({
     container: '#waveform',
-    waveColor: '#dad8a7',
+    waveColor: '#fec2c9',
     progressColor: '#ff9e9d'
   });
 

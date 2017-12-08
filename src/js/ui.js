@@ -38,8 +38,12 @@ export default (tracks, data) => {
     node.classList.add('active');
     const idx = node.dataset.trackId;
     const track = tracks[idx].track;
-    const h2 = document.querySelector('.now-playing');
+    const img = document.querySelector('.now-playing-img');
+    img.src = track.album.images[2].url;
+    img.classList.add('active');
+    const h2 = document.querySelector('.now-playing-title');
     h2.innerText = `${track.name} - ${track.artists[0].name}`;
+    h2.classList.add('active');
     const spotifyLink = document.querySelector('.spotify-btn');
     spotifyLink.href = track.external_urls.spotify;
 

@@ -1,8 +1,7 @@
 #sidebar {
   .song-item {
-    background: linear-gradient($turquoise, $green);
+    background: linear-gradient(to bottom right, $turquoise, $green);
     padding: 5px 10px;
-    // border-bottom: 1px solid gray;
     display: flex;
 
     &:first-child {
@@ -34,5 +33,6 @@
 
   .song-artist {
     font-size: 12px;
+    padding-top: 6px;
   }
 }

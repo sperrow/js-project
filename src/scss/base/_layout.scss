@@ -39,6 +39,12 @@ label {
   display: block;
 }
 
+hr {
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  margin: 0;
+}
+
 input[type="text"], input[type="password"], input[type="date"], textarea, select {
   padding: .5em .6em;
   display: inline-block;
@@ -52,15 +58,19 @@ input[type="text"], input[type="password"], input[type="date"], textarea, select
 
 button, .btn {
   box-sizing: border-box;
+  text-align: center;
   padding: 10px;
   cursor: pointer;
   outline: none;
-  font-weight: 700;
   line-height: 20px;
-  background: linear-gradient($turquoise, $green);
+  background: linear-gradient(to bottom right, $turquoise, $green);
   min-width: 90px;
 
   &:hover {
     background: $turquoise;
   }
+}
+
+.gradient {
+  background: linear-gradient(to bottom right, $gradient-start, $gradient-end);
 }
