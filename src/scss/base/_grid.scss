@@ -27,6 +27,7 @@ $breakpoint-large: 960px; // 60em; // 960px
 .row [class^="col"] {
   float: left;
   margin: 0.5rem 2%;
+  margin-top: 0;
   min-height: 0.125rem;
 }
 

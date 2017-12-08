@@ -1,20 +1,35 @@
 #sidebar {
   .song-item {
-    background-color: $purple;
+    background: linear-gradient($turquoise, $green);
     padding: 5px 10px;
-    border-bottom: 1px solid gray;
+    // border-bottom: 1px solid gray;
+    display: flex;
 
     &:first-child {
       padding-top: 10px;
     }
 
-    &:hover {
-      background-color: $darkpurple;
+    &.active, &:hover {
+      background: $gray;
+      color: white;
+      cursor: pointer;
     }
   }
 
   .song-item > * {
     pointer-events: none;
+  }
+
+  .song-text {
+    padding-left: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .song-img {
+    width: 40px;
+    height: 40px;
   }
 
   .song-artist {

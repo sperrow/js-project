@@ -1,27 +1,29 @@
-export default url => {
+const waveformDisplay = url => {
+
+  const handleClick = e => {
+    window.wavesurfer.playPause();
+  };
+
   const button = document.querySelector('.waveform-btn');
-  button.classList.add('active');
+
+  if (window.wavesurfer) {
+    window.wavesurfer.destroy();
+  } else {
+    button.addEventListener('click', handleClick);
+  }
 
   const wavesurfer = WaveSurfer.create({
     container: '#waveform',
-    waveColor: 'violet',
-    progressColor: 'purple'
+    waveColor: '#dad8a7',
+    progressColor: '#ff9e9d'
   });
+
   wavesurfer.load(url);
   wavesurfer.on('ready', () => {
     wavesurfer.play();
   });
 
-  button.addEventListener('click', e => {
-    const playing = button.children[0];
-    const paused = button.children[1];
-    if (playing.classList.contains('active')) {
-      playing.classList.remove('active');
-      paused.classList.add('active');
-    } else {
-      paused.classList.remove('active');
-      playing.classList.add('active');
-    }
-    wavesurfer.playPause();
-  });
+  window.wavesurfer = wavesurfer;
 };
+
+export default waveformDisplay;

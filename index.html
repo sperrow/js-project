@@ -2,30 +2,35 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Spotify Visualizer</title>
+    <title>Spotify Discovery</title>
+    <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans:400,700" rel="stylesheet">
     <link rel="stylesheet" href="/dist/css/main.css">
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/wavesurfer.js/1.4.0/wavesurfer.min.js"></script>
   </head>
   <body>
     <nav class="site-nav">
-      <h1 class="title">Music To Discover</h1>
+      <h1 class="title">Weekly Music To Discover</h1>
     </nav>
     <div class="container">
       <div class="row">
         <div class="col-8">
           <div id="results">
-            <div id="waveform">
-              <button class="waveform-btn">
-                <span class="playing active">
+            <span class="eyebrow">Now Playing</span>
+            <h2 class="now-playing"></h2>
+            <hr />
+            <div class="waveform-container">
+              <div id="waveform"></div>
+              <div class="waveform-buttons">
+                <button class="waveform-btn">
+                  <i class="fa fa-play" aria-hidden="true"></i>&nbsp;/&nbsp;
                   <i class="fa fa-pause" aria-hidden="true"></i>
-                  Pause
-                </span>
-                <span class="paused">
-                  <i class="fa fa-play" aria-hidden="true"></i>
-                  Play
-                </span>
-              </button>
+                </button>
+                <a class="btn spotify-btn" href="#" target="_blank">Open in Spotify</a>
+              </div>
+            </div>
+            <div class="chart-container">
+              <canvas id="chart" width="300" height="300"></canvas>
             </div>
           </div>
         </div>

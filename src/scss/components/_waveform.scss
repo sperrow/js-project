@@ -1,10 +1,11 @@
-#waveform {
-  .waveform-btn {
-    display: none;
+.waveform-container {
+  margin: 40px 0;
 
-    &.active {
-      display: inline-block;
-    }
+  .waveform-buttons {
+    margin-top: 20px;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
   }
 
   .paused {
@@ -21,5 +22,12 @@
     &.active {
       display: inline;
     }
+  }
+
+  .spotify-btn {
+    display: inline-block;
+    color: inherit;
+    text-decoration: none;
+    margin-left: 20px;
   }
 }

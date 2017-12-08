@@ -1,44 +1,28 @@
 import Chart from 'chart.js';
 
-export default (data) => {
-  const ctx = document.createElement('canvas');
+const chartDisplay = track => {
+  const ctx = document.getElementById('chart');
 
-  const tracks = data.audio_features;
-  console.log(tracks);
-
-  const sum = (accumulator, currentValue) => accumulator + currentValue;
-
-  const avg = (arr, key) => {
-    return Math.floor((arr.map(item => item[key]).reduce(sum) / arr.length) * 100);
+  const percentage = (obj, key) => {
+    return Math.floor(obj[key] * 100);
   };
-
-  const danceability = avg(tracks, 'danceability');
-  const energy = avg(tracks, 'energy');
-  const instrumentalness = avg(tracks, 'instrumentalness');
-  const valence = avg(tracks, 'valence');
-
-  console.log(danceability);
-
+  const danceability = percentage(track, 'danceability');
+  const energy = percentage(track, 'energy');
+  const valence = percentage(track, 'valence');
 
   const dataObj = {
-    labels: ["Danceable", "Energy", "Instrumental", "Cheeriness", "Purple", "Orange"],
+    labels: ["Danceable", "Energy", "Cheeriness"],
     datasets: [{
-      data: [danceability, energy, instrumentalness, valence],
+      data: [danceability, energy, valence],
       backgroundColor: [
-        'rgba(255, 99, 132, 0.2)',
-        'rgba(54, 162, 235, 0.2)',
-        'rgba(255, 206, 86, 0.2)',
-        'rgba(75, 192, 192, 0.2)',
-        'rgba(153, 102, 255, 0.2)',
-        'rgba(255, 159, 64, 0.2)'
+        'rgba(255, 158, 157, 0.4)',
+        'rgba(114, 87, 124, 0.4)',
+        'rgba(63, 184, 175, 0.4)',
       ],
       borderColor: [
-        'rgba(255,99,132,1)',
-        'rgba(54, 162, 235, 1)',
-        'rgba(255, 206, 86, 1)',
-        'rgba(75, 192, 192, 1)',
-        'rgba(153, 102, 255, 1)',
-        'rgba(255, 159, 64, 1)'
+        'rgba(255, 158, 157, 1)',
+        'rgba(114, 87, 124, 1)',
+        'rgba(63, 184, 175, 1)',
       ],
       borderWidth: 1
     }]
@@ -49,7 +33,7 @@ export default (data) => {
         display: false
     },
     scales: {
-      yAxes: [{
+      xAxes: [{
         ticks: {
           min: 0,
           max: 100,
@@ -59,13 +43,23 @@ export default (data) => {
     }
   };
 
-  const myBarChart = new Chart(ctx, {
-    type: 'bar',
-    data: dataObj,
-    options
-  });
+  if (window.currentChart) {
+    window.currentChart.data.datasets = dataObj.datasets;
+    window.currentChart.update({
+      duration: 800,
+      easing: 'easeInOutSine'
+    });
+  } else {
+    window.currentChart = new Chart(ctx, {
+      type: 'horizontalBar',
+      data: dataObj,
+      options
+    });
+  }
 
-  const results = document.getElementById('results');
+  const results = document.querySelector('.chart-container');
 
   results.appendChild(ctx);
 };
+
+export default chartDisplay;
