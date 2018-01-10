@@ -11,7 +11,7 @@ const chartDisplay = track => {
   const valence = percentage(track, 'valence');
 
   const dataObj = {
-    labels: ["Danceable", "Energy", "Cheeriness"],
+    labels: ["Danceability", "Energy", "Cheeriness"],
     datasets: [{
       data: [danceability, energy, valence],
       backgroundColor: [
