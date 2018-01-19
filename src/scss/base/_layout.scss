@@ -63,11 +63,11 @@ button, .btn {
   cursor: pointer;
   outline: none;
   line-height: 20px;
-  background: linear-gradient(to bottom right, $turquoise, $green);
+  background: $button;
   min-width: 90px;
 
   &:hover {
-    background: $turquoise;
+    background: $gray;
   }
 }
 

@@ -1,6 +1,6 @@
 #sidebar {
   .song-item {
-    background: linear-gradient(to bottom right, $turquoise, $green);
+    background: linear-gradient(to bottom right, $button, $beige);
     padding: 5px 10px;
     display: flex;
 
@@ -9,7 +9,7 @@
     }
 
     &.active, &:hover {
-      background: $gray;
+      background: $button;
       color: white;
       cursor: pointer;
     }

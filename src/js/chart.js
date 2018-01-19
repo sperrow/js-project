@@ -16,13 +16,13 @@ const chartDisplay = track => {
       data: [danceability, energy, valence],
       backgroundColor: [
         'rgba(255, 158, 157, 0.4)',
-        'rgba(114, 87, 124, 0.4)',
-        'rgba(63, 184, 175, 0.4)',
+        'rgba(169, 194, 201, 0.4)',
+        'rgba(218, 216, 167, 0.4)',
       ],
       borderColor: [
         'rgba(255, 158, 157, 1)',
-        'rgba(114, 87, 124, 1)',
-        'rgba(63, 184, 175, 1)',
+        'rgba(169, 194, 201, 1)',
+        'rgba(218, 216, 167, 1)',
       ],
       borderWidth: 1
     }]
